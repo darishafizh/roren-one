@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-light: #0B1929;
+  --color-navy-dark: #0f172a;
+  --color-teal-light: #0891B2;
+  --color-teal-dark: #06b6d4;
+  --color-navyLight-light: #1E3A5F;
+  --color-navyLight-dark: #1e293b;
+  --color-textMain-light: #111827;
+  --color-textMain-dark: #F9FAFB;
+  --color-textMuted-light: #4B5563;
+  --color-textMuted-dark: #9CA3AF;
+  --color-bgBody-light: #FAFAFB;
+  --color-bgBody-dark: #0b0f19;
+  --color-bgSurface-light: #FFFFFF;
+  --color-bgSurface-dark: #111827;
+  --color-danger: #EF4444;
+  --color-danger-alert: #FCA5A5;
+  --color-success: #10B981;
+  --color-success-alert: #6EE7B7;
+  --color-info: #3B82F6;
+  --color-warning: #F59E0B;
+  
+  --font-sans: "Poppins", sans-serif;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bgBody-light);
+    color: var(--color-textMain-light);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  .dark body {
+    background-color: var(--color-bgBody-dark);
+    color: var(--color-textMain-dark);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 20px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #334155;
+}
